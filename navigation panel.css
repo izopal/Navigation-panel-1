@@ -1,0 +1,172 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: sans-serif;
+}
+body {
+   display: flex;
+   min-height: 50vh;
+   justify-content: center;
+   align-items: center;
+   background: #06021b;
+}
+.navigation {
+   position: relative;
+   width: 400px;
+   height: 70px;
+   background: linear-gradient(45deg, #2196F3, #E91E63);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 10px;
+}
+.navigation ul {
+   display: flex;
+   width: 350px;
+}
+.navigation ul li{
+   position: relative;
+   width: 70px;
+   height: 70px;
+   list-style: none;
+   z-index: 1;
+}
+.navigation ul li a {
+   position: relative;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   flex-direction: column;
+   width: 100%;
+   text-align: center;
+   font-weight: 500;
+}
+.navigation ul li .icon {
+   position: relative;
+   display: block;
+   line-height: 70px;
+   font-size: 1.5em;
+   text-align: center;
+   transition: .3s;
+}
+.navigation ul li:hover a .icon {
+   transform: translateY(-30px)
+}
+.navigation ul li a .icon .ionicon {
+   transform: translatey(10px);
+   height: 36px;
+   width: auto;
+ }
+ .navigation ul li:hover a .icon .ionicon{
+   transform: translatey(0px);
+   height: 24px;
+   width: auto;
+}
+ .navigation ul li a .icon .ionicon path, 
+ .navigation ul li a .icon .ionicon circle{
+   stroke-width: 50px;
+   stroke: #06021b;
+   fill: #fff;
+ }
+ .navigation ul li:hover a .icon .ionicon path, 
+ .navigation ul li:hover a .icon .ionicon circle{
+   stroke-width: 18px;
+   stroke: #fff;
+   fill: none;
+ }
+ .navigation ul li:hover:nth-child(5)  a .icon .ionicon path{
+   fill: blue;
+   stroke: #06021b;
+}
+ .navigation ul li:hover:nth-child(4)  a .icon .ionicon path,
+ .navigation ul li:hover:nth-child(4)  a .icon .ionicon circle{
+   fill: yellow;
+   stroke: #06021b;
+}
+
+.navigation ul li a .text {
+   position: absolute;
+   color: white;
+   font-weight: 400;
+   font-size: .75em;
+   letter-spacing: .05em;
+   opacity: 0;
+   transform: translatey(20px);
+   transition: .3s;
+}
+.navigation ul li:hover a .text{
+   opacity: 1;
+   transform: translateY(10px);
+}
+.navigation ul li a .circle {
+   position: absolute;
+   display: block;
+   width: 50px;
+   height: 50px;
+   border-radius: 50%;
+   border: 1.8px solid #fff;
+   background-color: transparent;
+   transform: translateY(-35px) scale(0);
+}
+.navigation ul li:hover a .circle{
+   transition: .3s;
+   transition-delay: .1s;
+   transform: translateY(-35px) scale(1);
+}
+.indikator {
+   display: none;
+   justify-content: center;
+   align-items: center;
+   position: absolute;
+   top: -50%;
+   width: 70px;
+   height: 70px;
+   background: linear-gradient(45deg, #2196F3, #E91E63);
+   border: 6px solid black;
+   border-radius: 50%;
+   transition: .3s;
+}
+.indikator::before{
+   content: "";
+   top: 50%;
+   left: -22px;
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   background-color: transparent;
+   border-top-right-radius: 20px;
+   box-shadow: 1px -10px 0 #06021b;
+}
+.indikator::after{
+   content: "";
+   top: 50%;
+   right: -22px;
+   position: absolute;
+   width: 20px;
+   height: 20px;
+   background-color: transparent;
+   border-top-left-radius: 20px;
+   box-shadow: -1px -10px 0 #06021b;
+}
+
+.navigation ul li:nth-child(1):hover ~ .indikator{
+   display: flex;
+   transform: translateX(0px);
+}
+.navigation ul li:nth-child(2):hover ~ .indikator{
+   display: flex;
+   transform: translateX(calc(70px * 1));
+}
+.navigation ul li:nth-child(3):hover ~ .indikator{
+   display: flex;
+   transform: translateX(calc(70px * 2));
+}
+.navigation ul li:nth-child(4):hover ~ .indikator{
+   display: flex;
+   transform: translateX(calc(70px * 3));
+}
+.navigation ul li:nth-child(5):hover ~ .indikator{
+   display: flex;
+   transform: translateX(calc(70px * 4));
+}
